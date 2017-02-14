@@ -122,4 +122,22 @@ $(document).ready(function() {
   //s = 'Last Updated ' + day + ' .';
   $('ul.bio-info').append('<li class="bio-info-item"><span class="bio-info-title">Today</span><span class="bio-info-value">' + dateToday() + '</span></li>');
 
+  //construct a new <li> tag.
+  var listItem = document.createElement('li');
+  //create a new <span> tag
+  var leftSpan = document.createElement('span');
+  var rightSpan = document.createElement('span');
+  //make a "text node" in order to put text inside our new span
+  var lastUpdated = document.createTextNode('Page last updated on');
+  var today = document.createTextNode('2017/2/14');
+
+  leftSpan.appendChild(lastUpdated);
+  rightSpan.appendChild(today);
+
+  listItem.appendChild(leftSpan);
+  listItem.appendChild(rightSpan);
+
+  var bio = document.getElementsByClassName('bio-info');
+  bio[0].appendChild(listItem);
+
 });
